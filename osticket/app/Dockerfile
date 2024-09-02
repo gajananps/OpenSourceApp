@@ -38,9 +38,9 @@ RUN chown -R www-data:www-data osticket
 
 RUN chmod -R 775 osticket
 
-RUN cd osticket
+RUN cd osticket/include
 
-RUN mv include/ost-sampleconfig.php include/ost-config.php
+RUN mv ost-sampleconfig.php ost-config.php
 
 WORKDIR /var/www/html
 
