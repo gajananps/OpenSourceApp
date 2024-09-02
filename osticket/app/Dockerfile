@@ -24,23 +24,23 @@ COPY ./info.php /var/www/html/
 
 COPY ./php.ini /etc/php/8.2/apache2/
 
-cd /var/www/html
+RUN cd /var/www/html
 
-wget https://github.com/osTicket/osTicket/releases/download/v1.18.1/osTicket-v1.18.1.zip
+RUN wget https://github.com/osTicket/osTicket/releases/download/v1.18.1/osTicket-v1.18.1.zip
 
-unzip osTicket-v1.18.1.zip
+RUN unzip osTicket-v1.18.1.zip
 
-mv upload osticket
+RUN mv upload osticket
 
-rm -rf osTicket-v1.18.1.zip scripts/
+RUN rm -rf osTicket-v1.18.1.zip scripts/
 
-chown -R www-data:www-data osticket
+RUN chown -R www-data:www-data osticket
 
-chmod -R 775 osticket
+RUN chmod -R 775 osticket
 
-cd osticket
+RUN cd osticket
 
-mv include/ost-sampleconfig.php include/ost-config.php
+RUN mv include/ost-sampleconfig.php include/ost-config.php
 
 WORKDIR /var/www/html
 
