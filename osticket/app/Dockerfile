@@ -14,7 +14,7 @@ RUN apt install apache2 -y
 
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
 
-RUN apt -y install php8.2 php8.2-mysql php8.2-zip php8.2-gd php8.2-mbstring php8.2-curl php8.2-xml
+RUN apt -y install php8.2 php8.2-mysql php8.2-zip php8.2-gd php8.2-mbstring php8.2-curl php8.2-xml php8.2-imap php8.2-intl php8.2-apcu 
 
 RUN apt -y remove php8.2-mysql*
 
