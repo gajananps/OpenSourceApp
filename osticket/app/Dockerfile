@@ -42,7 +42,7 @@ RUN mv /opt/osticket /var/www/html
 
 WORKDIR /var/www/html/osticket/include
 
-COPY ost-sampleconfig.php ost-config.php
+RUN mv ost-sampleconfig.php ost-config.php
 
 WORKDIR /var/www/html
 
