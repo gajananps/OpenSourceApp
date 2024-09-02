@@ -38,11 +38,11 @@ RUN chown -R www-data:www-data osticket
 
 RUN chmod -R 775 osticket
 
-RUN cd osticket/include
-
-#COPY ost-sampleconfig.php ost-config.php
-
 RUN mv /opt/osticket /var/www/html
+
+WORKDIR /var/www/html/osticket/include
+
+COPY ost-sampleconfig.php ost-config.php
 
 WORKDIR /var/www/html
 
