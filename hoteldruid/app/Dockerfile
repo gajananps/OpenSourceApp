@@ -24,15 +24,15 @@ COPY ./info.php /var/www/html/
 
 COPY ./php.ini /etc/php/8.2/apache2/
 
-cd /var/www/html
+WORKDIR /var/www/html
 
-wget https://www.hoteldruid.com/download/hoteldruid_3.0.6.tar.gz
+RUN wget https://www.hoteldruid.com/download/hoteldruid_3.0.6.tar.gz
 
-tar -xvf hoteldruid_3.0.6.tar.gz
+RUN tar -xvf hoteldruid_3.0.6.tar.gz
 
-chown -R www-data:www-data hoteldruid
+RUN chown -R www-data:www-data hoteldruid
 
-chmod -R 775 hoteldruid
+RUN chmod -R 775 hoteldruid
 
 WORKDIR /var/www/html
 
