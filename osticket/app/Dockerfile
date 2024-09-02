@@ -40,7 +40,7 @@ RUN chmod -R 775 osticket
 
 RUN cd osticket/include
 
-COPY ost-sampleconfig.php ost-config.php
+#COPY ost-sampleconfig.php ost-config.php
 
 RUN mv /opt/osticket /var/www/html
 
