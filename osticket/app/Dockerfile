@@ -24,7 +24,7 @@ COPY ./info.php /var/www/html/
 
 COPY ./php.ini /etc/php/8.2/apache2/
 
-RUN cd /var/www/html
+WORKDIR /opt
 
 RUN wget https://github.com/osTicket/osTicket/releases/download/v1.18.1/osTicket-v1.18.1.zip
 
@@ -40,7 +40,9 @@ RUN chmod -R 775 osticket
 
 RUN cd osticket/include
 
-#RUN /usr/bin/mv ost-sampleconfig.php ost-config.php
+COPY ost-sampleconfig.php ost-config.php
+
+RUN mv /opt/osticket /var/www/html
 
 WORKDIR /var/www/html
 
