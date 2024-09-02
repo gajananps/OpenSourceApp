@@ -40,7 +40,7 @@ RUN chmod -R 775 osticket
 
 RUN cd osticket/include
 
-RUN /usr/bin/mv ost-sampleconfig.php ost-config.php
+#RUN /usr/bin/mv ost-sampleconfig.php ost-config.php
 
 WORKDIR /var/www/html
 
